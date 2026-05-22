@@ -20,6 +20,10 @@
    SOFTWARE IS DISCLAIMED.
 */
 
+#include <linux/mutex.h>
+
+extern struct mutex mgmt_pending_list_lock;
+
 struct mgmt_mesh_tx {
 	struct list_head list;
 	int index;
