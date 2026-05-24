@@ -226,10 +226,10 @@ jobs:
                   if root == 'folkpatch' and 'folkpatch' not in fl: continue
                   if root == 'none' and any(x in fl for x in ['next', 'sukisu', 'resukisu', 'mambosu', 'apatch', 'folkpatch']): continue
                   
-                  if hz == 'ultra-performance' and 'ultra' not in fl: continue
-                  if hz == 'performance' and ('performance' not in fl or 'ultra' in fl): continue
-                  if hz == 'powersave' and 'powersave' not in fl: continue
-                  if hz == 'balance' and 'balance' not in fl: continue
+                  if hz == 'ultra-performance' and '-ultra-performance-' not in fl: continue
+                  if hz == 'performance' and ('-performance-' not in fl or '-ultra-performance-' in fl): continue
+                  if hz == 'powersave' and '-powersave-' not in fl: continue
+                  if hz == 'balance' and '-balance-' not in fl: continue
                   
                   if kpm and '-kpm' not in fl: continue
                   if not kpm and '-kpm' in fl: continue

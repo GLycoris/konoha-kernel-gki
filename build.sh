@@ -384,6 +384,17 @@ if [ "$KPM" == "on" ]; then
 fi
 
 # ==========================================
+# Baseband-guard Setup
+# ==========================================
+BBG_DIR="$KERNEL_DIR/Baseband-guard"
+if [ ! -d "$BBG_DIR" ]; then
+    echo "[+] Cloning Baseband-guard..."
+    git clone https://github.com/vc-teahouse/Baseband-guard.git "$BBG_DIR"
+fi
+echo "[+] Running Baseband-guard setup..."
+(cd "$KERNEL_DIR" && sh "$BBG_DIR/setup.sh")
+
+# ==========================================
 # Toolchain Setup
 # ==========================================
 check_clang() {
